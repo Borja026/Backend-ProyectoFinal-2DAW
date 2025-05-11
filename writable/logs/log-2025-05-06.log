@@ -1,0 +1,380 @@
+CRITICAL - 2025-05-06 14:55:53 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:56:26 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:57:01 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:57:01 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:57:22 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:58:13 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 14:58:45 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:03:40 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:03:42 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:04:35 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:04:54 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:04:55 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:05:11 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:07:01 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:07:11 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(18): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:13:17 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:13:23 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:24:46 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:25:17 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:25:44 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:26:38 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:26:49 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 134.
+ 1 APPPATH/Views/admin/reservas_view.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:27:15 --> ErrorException: Undefined array key "idReserva"
+[Method: GET, Route: admin/reservas]
+in APPPATH/Views/admin/reservas_view.php on line 140.
+ 1 APPPATH/Views/admin/reservas_view.php(140): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/reservas_view.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/AdminPanelReservas.php(19): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-05-06 15:34:30 --> mysqli_sql_exception: Unknown column 'reservas.idReserva' in 'where clause' in /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/BaseModel.php(609): CodeIgniter\Model->doFind()
+#6 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Controllers/AdminPanelReservas.php(16): CodeIgniter\BaseModel->find()
+#7 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+#8 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#9 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#13 {main}
+CRITICAL - 2025-05-06 15:34:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'reservas.idReserva' in 'where clause'
+[Method: GET, Route: admin/reservas]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(609): CodeIgniter\Model->doFind()
+ 4 APPPATH/Controllers/AdminPanelReservas.php(16): CodeIgniter\BaseModel->find()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:34:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'reservas.idReserva' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(609): CodeIgniter\Model->doFind()
+ 6 APPPATH/Controllers/AdminPanelReservas.php(16): CodeIgniter\BaseModel->find()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-06 15:34:30 --> [Caused by] mysqli_sql_exception: Unknown column 'reservas.idReserva' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(609): CodeIgniter\Model->doFind()
+ 7 APPPATH/Controllers/AdminPanelReservas.php(16): CodeIgniter\BaseModel->find()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelReservas->reservas()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()

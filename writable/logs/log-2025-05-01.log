@@ -1,0 +1,262 @@
+CRITICAL - 2025-05-01 13:07:46 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:35:13 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:35:14 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:35:16 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:35:29 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:37:15 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:37:19 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/empleados]
+in APPPATH/Views/admin/empleados_view.php on line 133.
+ 1 APPPATH/Views/admin/empleados_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/empleados_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/empleados_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelEmpleados.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelEmpleados->empleados()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:38:00 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/empleados]
+in APPPATH/Views/admin/empleados_view.php on line 133.
+ 1 APPPATH/Views/admin/empleados_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/empleados_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/empleados_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelEmpleados.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelEmpleados->empleados()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:44:54 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:45:27 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:45:37 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:46:00 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 13:55:46 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/clientes]
+in APPPATH/Views/admin/clientes_view.php on line 133.
+ 1 APPPATH/Views/admin/clientes_view.php(133): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/clientes_view.php(133): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/clientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelClientes->clientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 16:00:57 --> ErrorException: include(admin/menu.php): Failed to open stream: No such file or directory
+[Method: GET, Route: admin/pistasClientes]
+in APPPATH/Views/admin/pistasClientes_view.php on line 12.
+ 1 APPPATH/Views/admin/pistasClientes_view.php(12): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/admin/pistasClientes_view.php(12): include()
+ 3 SYSTEMPATH/View/View.php(224): include('/home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Views/admin/pistasClientes_view.php')
+ 4 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/AdminPanelPistasClientes.php(22): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelPistasClientes->pistasClientes()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 16:05:39 --> CodeIgniter\Database\Exceptions\DataException: There is no primary key defined when trying to make insert.
+[Method: POST, Route: admin/pistasClientes/guardar]
+in SYSTEMPATH/Model.php on line 358.
+ 1 SYSTEMPATH/Model.php(358): CodeIgniter\Database\Exceptions\DataException::forEmptyPrimaryKey()
+ 2 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 3 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 4 APPPATH/Controllers/AdminPanelPistasClientes.php(39): CodeIgniter\Model->insert()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelPistasClientes->guardarReserva()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 16:07:08 --> CodeIgniter\Database\Exceptions\DataException: There is no primary key defined when trying to make insert.
+[Method: POST, Route: admin/pistasClientes/guardar]
+in SYSTEMPATH/Model.php on line 358.
+ 1 SYSTEMPATH/Model.php(358): CodeIgniter\Database\Exceptions\DataException::forEmptyPrimaryKey()
+ 2 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 3 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 4 APPPATH/Controllers/AdminPanelPistasClientes.php(39): CodeIgniter\Model->insert()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelPistasClientes->guardarReserva()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 16:07:29 --> CodeIgniter\Database\Exceptions\DataException: There is no primary key defined when trying to make insert.
+[Method: POST, Route: admin/pistasClientes/guardar]
+in SYSTEMPATH/Model.php on line 358.
+ 1 SYSTEMPATH/Model.php(358): CodeIgniter\Database\Exceptions\DataException::forEmptyPrimaryKey()
+ 2 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 3 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 4 APPPATH/Controllers/AdminPanelPistasClientes.php(39): CodeIgniter\Model->insert()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelPistasClientes->guardarReserva()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-01 16:24:04 --> CodeIgniter\Database\Exceptions\DataException: There is no primary key defined when trying to make insert.
+[Method: POST, Route: admin/pistasClientes/guardar]
+in SYSTEMPATH/Model.php on line 358.
+ 1 SYSTEMPATH/Model.php(358): CodeIgniter\Database\Exceptions\DataException::forEmptyPrimaryKey()
+ 2 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 3 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 4 APPPATH/Controllers/AdminPanelPistasClientes.php(63): CodeIgniter\Model->insert()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\AdminPanelPistasClientes->guardarReserva()
+ 6 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
