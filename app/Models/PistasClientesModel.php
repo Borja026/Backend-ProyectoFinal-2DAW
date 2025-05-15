@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PistasClientesModel extends Model
 {
-    protected $table = 'pistasClientes';
+    protected $table = 'pistasclientes';
     protected $primaryKey = 'fechaHora';
     protected $allowedFields = ['fechaHora', 'correoClientes', 'idPistas', 'numPersonas'];
 
