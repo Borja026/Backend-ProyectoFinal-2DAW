@@ -8,7 +8,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 40px 20px;
             background-color: #f8f9fa;
         }
 
@@ -24,48 +25,54 @@
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            max-width: 650px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            column-gap: 20px;
+            row-gap: 15px;
 
-            & select {
-                text-align: center;
-                padding: 5px;
-
-                & option {
-                    padding: 5px;
-                }
+            & label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #495057;
             }
-        }
 
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #495057;
-        }
+            & input[type="text"],
+            & input[type="password"],
+            & input[type="number"],
+            & input[type="email"],
+            & input[type="date"],
+            & input[type="datetime-local"],
+            & input[type="file"],
+            & select,
+            & select option {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                box-sizing: border-box;
 
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        input[type="date"] {
-            width: 95%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
+                text-align: center;
+            }
 
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
+            & button {
+                grid-column: 1 / -1;
+                /* ocupa toda la fila */
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #007bff;
+                border: none;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+                justify-self: center;
+                width: 200px;
 
-            &:hover {
-                background-color: #0056b3;
+                &:hover {
+                    background-color: #0056b3;
+                }
             }
         }
 
@@ -80,8 +87,6 @@
             & th,
             & td {
                 padding: 12px;
-                text-align: left;
-                border-bottom: 1px solid #dee2e6;
                 text-align: center;
             }
 
@@ -90,18 +95,23 @@
                 color: #495057;
             }
 
-            & tr:hover {
-                background-color: #f1f3f5;
+            & tr {
+                border-bottom: 1px solid #dee2e6;
+
+                &:hover {
+                    background-color: #f1f3f5;
+                }
             }
         }
 
         .acciones {
+            height: 55px;
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
 
             & a {
                 display: block;
-                width: max-content;
                 padding: 8px;
                 border-radius: 10px;
                 color: white;
@@ -109,19 +119,16 @@
 
                 &:nth-child(1) {
                     background-color: #007bff;
+
+                    &:hover {
+                        background-color: rgb(0, 87, 179);
+                    }
                 }
 
                 &:nth-child(2) {
                     background-color: #ff0000;
-                }
 
-                &:hover {
-
-                    &:nth-child(1) {
-                        background-color: rgb(0, 87, 179);
-                    }
-
-                    &:nth-child(2) {
+                    &:hover {
                         background-color: rgb(177, 0, 0);
                     }
                 }
@@ -131,9 +138,10 @@
         #filtro {
             width: 300px;
             padding: 8px;
-            margin-bottom: 20px;
+            margin: 20px auto;
             border: 1px solid #ced4da;
             border-radius: 4px;
+            display: block;
         }
 
         p {
@@ -150,16 +158,30 @@
 
     <form action="<?= base_url('admin/pistasClientes/guardar') ?>" method="post">
         <input type="hidden" name="modo" value="<?= isset($reservaEditando) ? 'editar' : 'insertar' ?>">
-        <?php if (isset($reservaEditando)): ?>
+        <?php if (isset($reservaEditando)) { ?>
             <input type="hidden" name="idPistasOriginal" value="<?= esc($reservaEditando['idPistas']) ?>">
             <input type="hidden" name="fechaHoraOriginal" value="<?= esc($reservaEditando['fechaHora']) ?>">
-        <?php endif; ?>
+        <?php } ?>
 
         <label>ID Pista:</label>
-        <input type="text" name="idPistas" value="<?= esc($reservaEditando['idPistas'] ?? '') ?>" required>
+        <select name="idPistas" required>
+            <option value="">-- Selecciona una pista --</option>
+            <?php foreach ($pistas as $pista) { ?>
+                <option value="<?= esc($pista['id']) ?>" <?= (isset($reservaEditando) && $reservaEditando['idPistas'] == $pista['id']) ? 'selected' : '' ?>>
+                    <?= esc($pista['id']) ?>
+                </option>
+            <?php } ?>
+        </select>
 
         <label>Correo Cliente:</label>
-        <input type="email" name="correoClientes" value="<?= esc($reservaEditando['correoClientes'] ?? '') ?>" required>
+        <select name="correoClientes" required>
+            <option value="">-- Selecciona un correo de un cliente --</option>
+            <?php foreach ($clientes as $cliente) { ?>
+                <option value="<?= esc($cliente['correo']) ?>" <?= (isset($reservaEditando) && $reservaEditando['correoClientes'] == $cliente['correo']) ? 'selected' : '' ?>>
+                    <?= esc($cliente['correo']) ?>
+                </option>
+            <?php } ?>
+        </select>
 
         <label>Fecha y Hora:</label>
         <input type="datetime-local" name="fechaHora"
@@ -167,12 +189,12 @@
             required>
 
         <label>Número de Personas:</label>
-        <input type="number" name="numPersonas" value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>" required>
+        <input type="number" name="numPersonas" value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>" min="1"
+            max="5" required>
 
         <button type="submit"><?= isset($reservaEditando) ? 'Actualizar' : 'Insertar' ?></button>
     </form>
 
-    <!-- No funciona, hacer que funcione -->
     <p>Buscar pista: <input type="text" id="filtro" placeholder="Buscar pista..."></p>
 
     <table id="tablaPistasClientes">
@@ -185,8 +207,9 @@
                 <th>Acciones</th>
             </tr>
         </thead>
+
         <tbody>
-            <?php foreach ($reservas as $reserva): ?>
+            <?php foreach ($reservas as $reserva) { ?>
                 <tr>
                     <td><?= esc($reserva['idPistas']) ?></td>
                     <td><?= esc($reserva['correoClientes']) ?></td>
@@ -194,12 +217,13 @@
                     <td><?= esc($reserva['numPersonas']) ?></td>
                     <td class="acciones">
                         <a
-                            href="<?= base_url('admin/pistasClientes?editar=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>">Editar</a>
+                            href="<?= base_url('admin/pistasClientes?editar=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>">
+                            Editar</a>
                         <a href="<?= base_url('admin/pistasClientes/eliminar?fechaHora=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>"
                             onclick="return confirm('¿Seguro que deseas eliminar esta reserva?')">Eliminar</a>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+            <?php } ?>
         </tbody>
     </table>
 </body>

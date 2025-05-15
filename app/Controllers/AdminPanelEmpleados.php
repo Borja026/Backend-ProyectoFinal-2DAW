@@ -22,6 +22,8 @@ class AdminPanelEmpleados extends BaseController
         return view('admin/empleados_view', $data);
     }
 
+
+
     public function guardarEmpleado()
     {
         helper(['form', 'filesystem']);
@@ -29,40 +31,49 @@ class AdminPanelEmpleados extends BaseController
         $model = new EmpleadosModel();
         $modo = $this->request->getPost('modo');
 
+        $dni = $this->request->getPost('dni');
         $foto = $this->request->getFile('foto');
+        $passwordPlano = $this->request->getPost('password');
+
         $nombreArchivo = null;
-
         if ($foto && $foto->isValid() && !$foto->hasMoved()) {
-            $nombreArchivo = $foto->getRandomName(); // Nombre aleatorio
+            $nombreArchivo = $foto->getRandomName();
             $rutaDestino = FCPATH . 'imgs/empleados';
-
-            // Crear carpeta si no existe
             if (!is_dir($rutaDestino)) {
                 mkdir($rutaDestino, 0777, true);
             }
-
             $foto->move($rutaDestino, $nombreArchivo);
         }
 
         $data = [
-            'dni' => $this->request->getPost('dni'),
+            'dni' => $dni,
             'nombre' => $this->request->getPost('nombre'),
             'apellidos' => $this->request->getPost('apellidos'),
             'fecha' => $this->request->getPost('fecha'),
-            'telefono' => $this->request->getPost('telefono')
+            'telefono' => $this->request->getPost('telefono'),
+            'correo' => $this->request->getPost('correo')
         ];
+
+        if ($passwordPlano) {
+            $data['password'] = hash('sha256', $passwordPlano);
+        } elseif ($modo === 'editar') {
+            $data['password'] = $model->find($dni)['password'] ?? null;
+        }
 
         if ($nombreArchivo) {
             $data['foto'] = $nombreArchivo;
         } elseif ($modo === 'editar') {
-            // En modo editar, conservar la foto actual si no se sube una nueva
-            $data['foto'] = $model->find($data['dni'])['foto'] ?? null;
+            $data['foto'] = $model->find($dni)['foto'] ?? null;
         }
 
         if ($modo === 'insertar') {
+            $existe = $model->find($dni);
+            if ($existe) {
+                return redirect()->back()->with('error', 'Ya existe un empleado con ese DNI.');
+            }
             $model->insert($data);
-        } else {
-            $model->update($data['dni'], $data);
+        } elseif ($modo === 'editar') {
+            $model->update($dni, $data);
         }
 
         return redirect()->to('/admin/empleados');
@@ -81,11 +92,17 @@ class AdminPanelEmpleados extends BaseController
             return $this->response->setStatusCode(404)->setBody('Empleado no encontrado.');
         }
 
-        // Elimina usando el segundo parámetro 'false'
+        // Ruta del archivo de la imagen
+        $foto = $empleado['foto'] ?? '';
+        $rutaImagen = FCPATH . 'imgs/empleados/' . $foto;
+
+        // Si no es la imagen por defecto y el archivo existe, se elimina
+        if ($foto && $foto !== 'default_user.png' && file_exists($rutaImagen)) {
+            unlink($rutaImagen);
+        }
+
         $model->delete($dni, false);
 
         return redirect()->to('/admin/empleados');
     }
-
-
 }

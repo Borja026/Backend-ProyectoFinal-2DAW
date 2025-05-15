@@ -3,19 +3,26 @@
 namespace App\Controllers;
 
 use App\Models\PistasClientesModel;
+use App\Models\ClientesModel;
+use App\Models\PistasModel;
 
 class AdminPanelPistasClientes extends BaseController
 {
     public function pistasClientes()
     {
-        $model = new PistasClientesModel();
-        $data['reservas'] = $model->findAll();
+        $pistasClientesModel = new PistasClientesModel();
+        $clientesModel = new ClientesModel();
+        $pistasModel = new PistasModel();
+
+        $data['reservas'] = $pistasClientesModel->findAll();
+        $data['clientes'] = $clientesModel->findAll();
+        $data['pistas'] = $pistasModel->findAll();
 
         $fechaHora = $this->request->getGet('editar');
         $idPistas = $this->request->getGet('id');
 
         if ($fechaHora && $idPistas) {
-            $reserva = $model->where('fechaHora', $fechaHora)
+            $reserva = $pistasClientesModel->where('fechaHora', $fechaHora)
                 ->where('idPistas', $idPistas)
                 ->first();
             if ($reserva) {

@@ -49,7 +49,7 @@ class PistasClientes extends ResourceController
     }
 
     public function update($fechaHora = null)
-    {    
+    {
         $model = new PistasClientesModel();
         $json = $this->request->getJSON();
 
@@ -81,7 +81,7 @@ class PistasClientes extends ResourceController
         ];
 
         return $this->respond($response);
-    
+
     }
 
     public function delete($fechaHora = null)

@@ -26,6 +26,8 @@ class AdminPanelGaleria extends BaseController
         return view('admin/galeria_view', $data);
     }
 
+
+
     public function guardarImagen()
     {
         helper(['form', 'filesystem']);
@@ -36,38 +38,44 @@ class AdminPanelGaleria extends BaseController
         $modo = $this->request->getPost('modo');
         $categoriaId = $this->request->getPost('idCategoria');
 
-        // Buscar la carpeta de la categoría
         $categoria = $categoriasModel->find($categoriaId);
         if (!$categoria) {
             return redirect()->back()->with('error', 'Categoría no válida');
         }
+
         $nombreCarpeta = $categoria['nombreCarpeta'];
 
         if ($modo === 'insertar') {
             $archivo = $this->request->getFile('archivo');
 
             if ($archivo && $archivo->isValid() && !$archivo->hasMoved()) {
-                $nombreArchivo = $archivo->getRandomName(); // Puedes usar ->getName() si prefieres el original
+                // $nombreArchivo = $archivo->getRandomName();
+                $nombreArchivo = $archivo->getName(); // Usar el nombre original del archivo
 
                 $rutaDestino = FCPATH . 'imgs/galeria/' . $nombreCarpeta;
-
-                // Crear la carpeta si no existe
                 if (!is_dir($rutaDestino)) {
                     mkdir($rutaDestino, 0777, true);
                 }
 
-                // Mover el archivo
                 $archivo->move($rutaDestino, $nombreArchivo);
 
-                // Guardar en la base de datos
+                // Evitar duplicado de clave primaria
+                $existe = $galeriaModel->find($nombreArchivo);
+                if ($existe) {
+                    return redirect()->back()->with('error', 'Ya existe una imagen con ese nombre.');
+                }
+
                 $galeriaModel->insert([
                     'nombre' => $nombreArchivo,
                     'idCategoria' => $categoriaId
                 ]);
             }
         } elseif ($modo === 'editar') {
-            // En modo editar no se cambia el archivo, solo la categoría
             $nombre = $this->request->getPost('nombre');
+
+            if (!$galeriaModel->find($nombre)) {
+                return redirect()->back()->with('error', 'La imagen no existe.');
+            }
 
             $galeriaModel->update($nombre, [
                 'idCategoria' => $categoriaId
@@ -76,6 +84,7 @@ class AdminPanelGaleria extends BaseController
 
         return redirect()->to('/admin/galeria');
     }
+
 
 
     public function eliminarImagen()

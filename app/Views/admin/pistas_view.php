@@ -7,7 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 40px 20px;
             background-color: #f8f9fa;
         }
 
@@ -23,48 +24,54 @@
             border-radius: 8px;
             margin-bottom: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            max-width: 650px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            column-gap: 20px;
+            row-gap: 15px;
 
-            & select {
-                text-align: center;
-                padding: 5px;
-
-                & option {
-                    padding: 5px;
-                }
+            & label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+                color: #495057;
             }
-        }
 
-        label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-            color: #495057;
-        }
+            & input[type="text"],
+            & input[type="password"],
+            & input[type="number"],
+            & input[type="email"],
+            & input[type="date"],
+            & input[type="datetime-local"],
+            & input[type="file"],
+            & select,
+            & select option {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                box-sizing: border-box;
 
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        input[type="date"] {
-            width: 95%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
+                text-align: center;
+            }
 
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
+            & button {
+                grid-column: 1 / -1;
+                /* ocupa toda la fila */
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #007bff;
+                border: none;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+                justify-self: center;
+                width: 200px;
 
-            &:hover {
-                background-color: #0056b3;
+                &:hover {
+                    background-color: #0056b3;
+                }
             }
         }
 
@@ -79,8 +86,6 @@
             & th,
             & td {
                 padding: 12px;
-                text-align: left;
-                border-bottom: 1px solid #dee2e6;
                 text-align: center;
             }
 
@@ -89,18 +94,23 @@
                 color: #495057;
             }
 
-            & tr:hover {
-                background-color: #f1f3f5;
+            & tr {
+                border-bottom: 1px solid #dee2e6;
+
+                &:hover {
+                    background-color: #f1f3f5;
+                }
             }
         }
 
         .acciones {
+            height: 55px;
             display: flex;
             justify-content: space-evenly;
+            align-items: center;
 
             & a {
                 display: block;
-                width: max-content;
                 padding: 8px;
                 border-radius: 10px;
                 color: white;
@@ -108,19 +118,16 @@
 
                 &:nth-child(1) {
                     background-color: #007bff;
+
+                    &:hover {
+                        background-color: rgb(0, 87, 179);
+                    }
                 }
 
                 &:nth-child(2) {
                     background-color: #ff0000;
-                }
 
-                &:hover {
-
-                    &:nth-child(1) {
-                        background-color: rgb(0, 87, 179);
-                    }
-
-                    &:nth-child(2) {
+                    &:hover {
                         background-color: rgb(177, 0, 0);
                     }
                 }
@@ -130,9 +137,10 @@
         #filtro {
             width: 300px;
             padding: 8px;
-            margin-bottom: 20px;
+            margin: 20px auto;
             border: 1px solid #ced4da;
             border-radius: 4px;
+            display: block;
         }
 
         p {
@@ -143,15 +151,25 @@
 </head>
 
 <body>
-    
+
     <?= view('admin/menu') ?>
 
     <h2>Gestión de Pistas</h2>
 
+
+    <?php if (session()->getFlashdata('error')) { ?>
+        <script>
+            alert("<?= session()->getFlashdata('error') ?>");
+        </script>
+    <?php } ?>
+
+
     <form action="<?= base_url('admin/pistas/guardar') ?>" method="post">
         <input type="hidden" name="modo" value="<?= isset($pistaEditando) ? 'editar' : 'insertar' ?>">
+
         <label>ID:</label>
         <input type="number" name="id" min="1" value="<?= esc($pistaEditando['id'] ?? '') ?>" <?= isset($pistaEditando) ? 'readonly' : '' ?> required>
+
         <label>Reservada:</label>
         <select name="reservada" id="" required style="padding: 5px 10px;">
             <option value="0" <?= isset($pistaEditando) && $pistaEditando['reservada'] == 0 ? 'selected' : '' ?>>NO
@@ -159,10 +177,10 @@
             <option value="1" <?= isset($pistaEditando) && $pistaEditando['reservada'] == 1 ? 'selected' : '' ?>>SI
             </option>
         </select>
+
         <button type="submit"><?= isset($pistaEditando) ? 'Actualizar' : 'Insertar' ?></button>
     </form>
 
-    <!-- No funciona, hacer que funcione -->
     <p>Buscar pista: <input type="text" id="filtro" placeholder="Buscar pista..."></p>
 
     <table id="tablaPistas">
@@ -173,8 +191,9 @@
                 <th>Acciones</th>
             </tr>
         </thead>
+
         <tbody>
-            <?php foreach ($pistas as $pista): ?>
+            <?php foreach ($pistas as $pista) { ?>
                 <tr>
                     <td><?= esc($pista['id']) ?></td>
                     <td>
@@ -192,7 +211,7 @@
                             onclick="return confirm('¿Eliminar?')">Eliminar</a>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+            <?php } ?>
         </tbody>
     </table>
 </body>

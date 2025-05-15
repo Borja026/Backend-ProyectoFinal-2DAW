@@ -1,6 +1,1 @@
 .env
-
-# Ocultar las imagenes de la carpeta public/imgs
-./public/imgs/*.png
-./public/imgs/*.jpg
-./public/imgs/*.jpeg

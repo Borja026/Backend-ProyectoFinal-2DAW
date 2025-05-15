@@ -33,13 +33,22 @@ class AdminPanelPistas extends BaseController
         ];
 
         if ($modo === 'insertar') {
-            $model->insert($data);
+            try {
+                $model->insert($data);
+            } catch (\Exception $e) {
+                if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+                    return redirect()->back()->withInput()->with('error', 'Clave primaria duplicada');
+                } else {
+                    throw $e; // otro tipo de error
+                }
+            }
         } else {
             $model->update($data['id'], $data);
         }
 
         return redirect()->to('/admin/pistas');
     }
+
 
     public function eliminarPista()
     {

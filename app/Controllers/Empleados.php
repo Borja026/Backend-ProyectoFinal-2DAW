@@ -39,7 +39,9 @@ class Empleados extends ResourceController
             'apellidos' => $this->request->getPost('apellidos'),
             'foto' => $this->request->getPost('foto'),
             'fecha' => $this->request->getPost('fecha'),
-            'telefono' => $this->request->getPost('telefono')
+            'telefono' => $this->request->getPost('telefono'),
+            'correo' => $this->request->getPost('correo'),
+            'password' => $this->request->getPost('password')
         ];
 
         $model->insert($data);
@@ -66,7 +68,9 @@ class Empleados extends ResourceController
                 'apellidos' => $json->apellidos,
                 'foto' => $json->foto,
                 'fecha' => $json->fecha,
-                'telefono' => $json->telefono
+                'telefono' => $json->telefono,
+                'correo' => $json->correo,
+                'password' => $json->password
             ];
         } else {
             $input = $this->request->getRawInput();
@@ -76,7 +80,9 @@ class Empleados extends ResourceController
                 'apellidos' => $input['apellidos'],
                 'foto' => $input['foto'],
                 'fecha' => $input['fecha'],
-                'telefono' => $input['telefono']
+                'telefono' => $input['telefono'],
+                'correo' => $input['correo'],
+                'password' => $input['password']
             ];
         }
 
