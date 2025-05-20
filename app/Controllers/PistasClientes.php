@@ -13,7 +13,8 @@ class PistasClientes extends ResourceController
     public function index()
     {
         $model = new PistasClientesModel();
-        return $this->respond($model->findAll(), 200);
+        $data = $model->findAll();
+        return $this->respond($data, 200);
     }
 
     public function show($fechaHora = null)
@@ -23,27 +24,37 @@ class PistasClientes extends ResourceController
 
         return ($data)
             ? $this->respond($data)
-            : $this->failNotFound('No se encontró la reserva con esa fecha.');
+            : $this->failNotFound('No se encontró la reserva con esa fecha y hora.');
     }
 
     public function create()
     {
         $model = new PistasClientesModel();
-        $data = [
-            'fechaHora' => $this->request->getPost('fechaHora'),
-            'correoClientes' => $this->request->getPost('correoClientes'),
-            'idPistas' => $this->request->getPost('idPistas'),
-            'numPersonas' => $this->request->getPost('numPersonas')
-        ];
+        $json = $this->request->getJSON();
 
-        $model->insert($data);
-        $response = [
-            'status' => 201,
-            'error' => null,
-            'messages' => [
-                'success' => 'Data Saved'
-            ]
-        ];
+        if ($json) {
+            $data = [
+                'fechaHora' => $json->fechaHora,
+                'correoClientes' => $json->correoClientes,
+                'idPistas' => $json->idPistas,
+                'numPersonas' => $json->numPersonas,
+                'nivelPersonas' => $json->nivelPersonas ?? null,
+                'mediaNivel' => $json->mediaNivel ?? null
+            ];
+        } else {
+            $data = [
+                'fechaHora' => $this->request->getPost('fechaHora'),
+                'correoClientes' => $this->request->getPost('correoClientes'),
+                'idPistas' => $this->request->getPost('idPistas'),
+                'numPersonas' => $this->request->getPost('numPersonas'),
+                'nivelPersonas' => $this->request->getPost('nivelPersonas') ?? null,
+                'mediaNivel' => $this->request->getPost('mediaNivel') ?? null
+            ];
+        }
+
+        if (!$model->insert($data)) {
+            return $this->failValidationErrors($model->errors());
+        }
 
         return $this->respondCreated($data, 201);
     }
@@ -58,7 +69,9 @@ class PistasClientes extends ResourceController
                 'fechaHora' => $json->fechaHora,
                 'correoClientes' => $json->correoClientes,
                 'idPistas' => $json->idPistas,
-                'numPersonas' => $json->numPersonas
+                'numPersonas' => $json->numPersonas,
+                'nivelPersonas' => $json->nivelPersonas ?? null,
+                'mediaNivel' => $json->mediaNivel ?? null
             ];
         } else {
             $input = $this->request->getRawInput();
@@ -66,22 +79,23 @@ class PistasClientes extends ResourceController
                 'fechaHora' => $input['fechaHora'],
                 'correoClientes' => $input['correoClientes'],
                 'idPistas' => $input['idPistas'],
-                'numPersonas' => $input['numPersonas']
+                'numPersonas' => $input['numPersonas'],
+                'nivelPersonas' => $input['nivelPersonas'] ?? null,
+                'mediaNivel' => $input['mediaNivel'] ?? null
             ];
         }
 
-        // Insertar
-        $model->update($fechaHora, $data);
-        $response = [
+        if (!$model->update($fechaHora, $data)) {
+            return $this->failValidationErrors($model->errors());
+        }
+
+        return $this->respond([
             'status' => 200,
             'error' => null,
             'messages' => [
-                'success' => 'Data Updated'
+                'success' => 'Reserva actualizada correctamente'
             ]
-        ];
-
-        return $this->respond($response);
-
+        ]);
     }
 
     public function delete($fechaHora = null)

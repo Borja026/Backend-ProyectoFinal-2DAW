@@ -1,0 +1,90 @@
+ERROR - 2025-05-20 14:37:35 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 14:42:27 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 14:43:33 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 14:45:54 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 14:46:02 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 14:58:08 --> Error al registrar cliente: {"correo":"The correo field is required.","nombre":"The nombre field is required.","apellidos":"The apellidos field is required.","fecha":"The fecha field is required.","telefono":"The telefono field is required.","username":"The username field is required.","password":"The password field is required.","sexo":"The sexo field is required.","nivel":"The nivel field is required.","posicion":"The posicion field is required.","recibeClases":"The recibeClases field is required."}
+ERROR - 2025-05-20 15:04:21 --> Error al registrar cliente: []
+ERROR - 2025-05-20 15:06:15 --> Error al registrar cliente: []
+ERROR - 2025-05-20 15:10:04 --> Error al registrar cliente: []
+ERROR - 2025-05-20 15:29:30 --> Error al registrar cliente: {"telefono":"The telefono field must be at least 9 characters in length."}
+ERROR - 2025-05-20 15:30:29 --> Error al registrar cliente: {"telefono":"The telefono field must be at least 9 characters in length."}
+ERROR - 2025-05-20 15:35:39 --> Error al registrar cliente: []
+ERROR - 2025-05-20 15:37:13 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value."}
+ERROR - 2025-05-20 15:37:33 --> mysqli_sql_exception: Duplicate entry 'beatriz' for key 'username' in /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/BaseModel.php(839): CodeIgniter\Model->doInsert()
+#6 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Model.php(800): CodeIgniter\BaseModel->insert()
+#7 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/app/Controllers/Clientes.php(117): CodeIgniter\Model->insert()
+#8 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(933): App\Controllers\Clientes->create()
+#9 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#10 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/borjaquinones/web/borja.com.es/public_html/ProyectoDosDAW/api_backend/public/index.php(56): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2025-05-20 15:37:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'beatriz' for key 'username'
+[Method: POST, Route: clientes]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 5 APPPATH/Controllers/Clientes.php(117): CodeIgniter\Model->insert()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Clientes->create()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-20 15:37:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'beatriz' for key 'username'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 7 APPPATH/Controllers/Clientes.php(117): CodeIgniter\Model->insert()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Clientes->create()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-20 15:37:33 --> [Caused by] mysqli_sql_exception: Duplicate entry 'beatriz' for key 'username'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(839): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Clientes.php(117): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Clientes->create()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-05-20 15:39:44 --> Error al registrar cliente: []
+ERROR - 2025-05-20 15:59:06 --> Error al registrar cliente: []
+ERROR - 2025-05-20 17:12:09 --> Error al registrar cliente: []
+
+
+ERROR - 2025-05-20 17:51:50 --> Error al registrar cliente: []
+ERROR - 2025-05-20 17:59:09 --> Error al registrar cliente: []
+ERROR - 2025-05-20 18:06:46 --> Error al registrar cliente: []
+ERROR - 2025-05-20 18:06:50 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-20 18:06:56 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-20 18:07:00 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-20 18:10:15 --> Error al registrar cliente: {"telefono":"The telefono field must be at least 9 characters in length."}
+ERROR - 2025-05-20 18:10:54 --> Error al registrar cliente: []
+ERROR - 2025-05-20 18:11:28 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-20 18:24:37 --> Error al registrar cliente: []

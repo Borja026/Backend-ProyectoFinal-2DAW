@@ -192,6 +192,14 @@
         <input type="number" name="numPersonas" value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>" min="1"
             max="5" required>
 
+        <label>Nivel Personas:</label>
+        <input type="text" name="nivelPersonas" value="<?= esc($reservaEditando['nivelPersonas'] ?? '') ?>"
+            placeholder="Ej. [1.50, 2.00]" maxlength="255">
+
+        <label>Media Nivel:</label>
+        <input type="number" name="mediaNivel" value="<?= esc($reservaEditando['mediaNivel'] ?? '') ?>"
+            placeholder="Media nivel (0-10)" min="0" max="10" step="0.1">
+
         <button type="submit"><?= isset($reservaEditando) ? 'Actualizar' : 'Insertar' ?></button>
     </form>
 
@@ -204,6 +212,8 @@
                 <th>Correo Cliente</th>
                 <th>Fecha y Hora</th>
                 <th>Nº Personas</th>
+                <th>Nivel Personas</th>
+                <th>Media Nivel</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -215,6 +225,9 @@
                     <td><?= esc($reserva['correoClientes']) ?></td>
                     <td><?= date('d/m/Y H:i', strtotime($reserva['fechaHora'])) ?></td>
                     <td><?= esc($reserva['numPersonas']) ?></td>
+                    <td><?= esc($reserva['nivelPersonas']) ?></td>
+                    <td><?= esc($reserva['mediaNivel']) ?></td>
+
                     <td class="acciones">
                         <a
                             href="<?= base_url('admin/pistasClientes?editar=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>">

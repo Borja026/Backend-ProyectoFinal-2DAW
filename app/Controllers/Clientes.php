@@ -18,8 +18,9 @@ class Clientes extends ResourceController
         return $this->respond($data, 200);
     }
 
-    public function show($correo = null)
+    public function show($id = null)
     {
+        $correo = urldecode($id);
         $model = new ClientesModel();
         $data = $model->getWhere(['correo' => $correo])->getResult();
 
@@ -30,43 +31,83 @@ class Clientes extends ResourceController
         }
     }
 
+    // public function create()
+    // {
+    //     $model = new ClientesModel();
+    //     $json = $this->request->getJSON(true); // Devuelve array asociativo
+
+    //     if (!$json) {
+    //         return $this->fail('No se recibió JSON válido');
+    //     }
+
+    //     log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
+
+    //     if (!$model->insert($json)) {
+    //         log_message('error', 'Error al registrar cliente: ' . json_encode($model->errors()));
+
+    //         // Esta es la forma correcta de devolver errores en CI4 y que Angular los entienda
+    //         return $this->respond([
+    //             'status' => false,
+    //             'errors' => $model->errors()
+    //         ], 400);
+    //     }
+
+    //     return $this->respond([
+    //         'status' => true,
+    //         'message' => 'Cliente registrado correctamente.'
+    //     ], 201);
+    // }
+    // public function create()
+    // {
+    //     $model = new ClientesModel();
+    //     $json = $this->request->getJSON(true);
+
+    //     if (!$json) {
+    //         return $this->fail('No se recibió JSON válido');
+    //     }
+
+    //     log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
+
+    //     // ✅ Mostrar los datos como respuesta (prueba)
+    //     return $this->respond($json);  // <- AÑADE ESTO TEMPORALMENTE Y COMENTA LO DEMÁS
+    // }
     public function create()
     {
         $model = new ClientesModel();
-        $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'apellidos' => $this->request->getPost('apellidos'),
-            'fecha' => $this->request->getPost('fecha'),
-            'foto' => $this->request->getPost('foto'),
-            'telefono' => $this->request->getPost('telefono'),
-            'username' => $this->request->getPost('username'),
-            'password' => $this->request->getPost('password'),
-            'sexo' => $this->request->getPost('sexo'),
-            'nivel' => $this->request->getPost('nivel'),
-            'posicion' => $this->request->getPost('posicion'),
-            'recibeClases' => $this->request->getPost('recibeClases')
-        ];
+        $json = $this->request->getJSON(true); // Devuelve array asociativo
 
-        $model->insert($data);
-        $response = [
-            'status' => 201,
-            'error' => null,
-            'messages' => [
-                'success' => 'Data Saved'
-            ]
-        ];
+        if (!$json) {
+            return $this->fail('No se recibió JSON válido');
+        }
 
-        return $this->respondCreated($data, 201);
+        log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
+
+        if (!$model->insert($json)) {
+            log_message('error', 'Error al registrar cliente: ' . json_encode($model->errors()));
+
+            return $this->respond([
+                'status' => false,
+                'errors' => $model->errors()
+            ], 400);
+        }
+
+        return $this->respond([
+            'status' => true,
+            'message' => 'Cliente registrado correctamente.'
+        ], 201);
     }
 
-    public function update($correo = null)
+
+
+    public function update($id = null)
     {
+        $correo = urldecode($id);
         $model = new ClientesModel();
         $json = $this->request->getJSON();
 
         if ($json) {
+            // OJO: NO incluyas el campo 'correo' aquí
             $data = [
-                'correo' => $json->correo,
                 'nombre' => $json->nombre,
                 'apellidos' => $json->apellidos,
                 'fecha' => $json->fecha,
@@ -82,7 +123,6 @@ class Clientes extends ResourceController
         } else {
             $input = $this->request->getRawInput();
             $data = [
-                'correo' => $input['correo'],
                 'nombre' => $input['nombre'],
                 'apellidos' => $input['apellidos'],
                 'fecha' => $input['fecha'],
@@ -97,21 +137,19 @@ class Clientes extends ResourceController
             ];
         }
 
-        // Insertar
         $model->update($correo, $data);
-        $response = [
+
+        return $this->respond([
             'status' => 200,
             'error' => null,
-            'messages' => [
-                'success' => 'Data Updated'
-            ]
-        ];
-
-        return $this->respond($response);
+            'messages' => ['success' => 'Datos actualizados']
+        ]);
     }
 
-    public function delete($correo = null)
+
+    public function delete($id = null)
     {
+        $correo = urldecode($id);
         $model = new ClientesModel();
         $data = $model->find($correo);
 
@@ -131,4 +169,31 @@ class Clientes extends ResourceController
             return $this->failNotFound('No Data Found with correo ' . $correo);
         }
     }
+
+    public function subirImagenCliente()
+    {
+        $request = \Config\Services::request();
+        $imagen = $this->request->getFile('imagen');
+        $correo = $this->request->getPost('correo');
+        $anterior = $this->request->getPost('anterior');
+
+        if ($imagen && $imagen->isValid() && !$imagen->hasMoved()) {
+            $nuevoNombre = $imagen->getRandomName();
+            $imagen->move('imgs/clientes', $nuevoNombre);
+
+            // Borrar imagen anterior si no es la default
+            if ($anterior && $anterior !== 'default_user.png' && file_exists('imgs/clientes/' . $anterior)) {
+                unlink('imgs/clientes/' . $anterior);
+            }
+
+            // Actualizar en la base de datos
+            $model = new \App\Models\ClientesModel();
+            $model->update($correo, ['foto' => $nuevoNombre]);
+
+            return $this->respond(['nuevaImagen' => $nuevoNombre]);
+        }
+
+        return $this->fail('No se pudo subir la imagen.');
+    }
+
 }

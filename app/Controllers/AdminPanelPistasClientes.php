@@ -44,7 +44,9 @@ class AdminPanelPistasClientes extends BaseController
             'fechaHora' => $fechaHora,
             'idPistas' => $this->request->getPost('idPistas'),
             'correoClientes' => $this->request->getPost('correoClientes'),
-            'numPersonas' => $this->request->getPost('numPersonas')
+            'numPersonas' => $this->request->getPost('numPersonas'),
+            'nivelPersonas' => $this->request->getPost('nivelPersonas') ?? null,
+            'mediaNivel' => $this->request->getPost('mediaNivel') ?? null
         ];
 
         if ($modo === 'insertar') {

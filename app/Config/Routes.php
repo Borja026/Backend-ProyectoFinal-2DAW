@@ -16,7 +16,6 @@ $routes->post('pistas', 'Pistas::create');
 $routes->put('pistas/(:segment)', 'Pistas::update');
 $routes->delete('pistas/(:segment)', 'Pistas::delete');
 
-
 //  Empleados
 $routes->resource('empleados');
 $routes->get('empleados', 'Empleados::index');
@@ -25,27 +24,21 @@ $routes->post('empleados', 'Empleados::create');
 $routes->put('empleados/(:segment)', 'Empleados::update');
 $routes->delete('empleados/(:segment)', 'Empleados::delete');
 
-
-
 //  Clientes
 $routes->resource('clientes');
-$routes->get('clientes', 'Clientes::index');
-$routes->get('clientes/(:segment)', 'Clientes::show');
-$routes->post('clientes', 'Clientes::create');
-$routes->put('clientes/(:segment)', 'Clientes::update');
-$routes->delete('clientes/(:segment)', 'Clientes::delete');
+// $routes->get('clientes', 'Clientes::index');
+// $routes->post('clientes', 'Clientes::create');
 
-
+// $routes->get('clientes/(:segment)', 'Clientes::show/$1');
+// $routes->put('clientes/(:segment)', 'Clientes::update/$1');
+// $routes->delete('clientes/(:segment)', 'Clientes::delete/$1');
 
 // PistasClientes
 $routes->get('pistasClientes', 'PistasClientes::index');
 $routes->post('pistasClientes', 'PistasClientes::create');
-
 $routes->get('pistasClientes/(:segment)', 'PistasClientes::show/$1');
 $routes->put('pistasClientes/(:segment)', 'PistasClientes::update/$1');
 $routes->delete('pistasClientes/(:segment)', 'PistasClientes::delete/$1');
-
-
 
 //  Galería
 $routes->resource('galeria');
@@ -55,8 +48,6 @@ $routes->post('galeria', 'Galeria::create');
 $routes->put('galeria/(:segment)', 'Galeria::update');
 $routes->delete('galeria/(:segment)', 'Galeria::delete');
 
-
-
 //  Categorías
 $routes->resource('categorias');
 $routes->get('categorias', 'Categorias::index');
@@ -64,14 +55,6 @@ $routes->get('categorias/(:segment)', 'Categorias::show');
 $routes->post('categorias', 'Categorias::create');
 $routes->put('categorias/(:segment)', 'Categorias::update');
 $routes->delete('categorias/(:segment)', 'Categorias::delete');
-
-
-
-
-
-
-
-
 
 
 // ----------------------------------------------------------------------------------------------------------
@@ -110,3 +93,11 @@ $routes->get('admin/galeria/eliminar', 'AdminPanelGaleria::eliminarImagen');
 $routes->get('admin/categorias', 'AdminPanelCategorias::categorias');
 $routes->post('admin/categorias/guardar', 'AdminPanelCategorias::guardarCategoria');
 $routes->get('admin/categorias/eliminar', 'AdminPanelCategorias::eliminarCategoria');
+
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------
+$routes->post('api/subirImagenCliente', 'Clientes::subirImagenCliente');

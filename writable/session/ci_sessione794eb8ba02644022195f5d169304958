@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 __ci_last_regenerate|i:1747339646;_ci_previous_url|s:79:"http://localhost/ProyectoFinal-2DAW/api_backend/public/index.php/admin/clientes";
+=======
+__ci_last_regenerate|i:1747335814;_ci_previous_url|s:79:"http://localhost/ProyectoFinal-2DAW/api_backend/public/index.php/admin/clientes";
+>>>>>>> 81e64f2 (Funciona el "login" de Inicio Sesión y de Registrarse y ademas funciona correctamente el "Área Jugador")
