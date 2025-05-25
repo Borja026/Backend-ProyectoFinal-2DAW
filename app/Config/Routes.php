@@ -26,19 +26,18 @@ $routes->delete('empleados/(:segment)', 'Empleados::delete');
 
 //  Clientes
 $routes->resource('clientes');
-// $routes->get('clientes', 'Clientes::index');
-// $routes->post('clientes', 'Clientes::create');
-
-// $routes->get('clientes/(:segment)', 'Clientes::show/$1');
-// $routes->put('clientes/(:segment)', 'Clientes::update/$1');
-// $routes->delete('clientes/(:segment)', 'Clientes::delete/$1');
+$routes->get('clientes/correo/(:any)', 'Clientes::getByCorreo/$1');
 
 // PistasClientes
 $routes->get('pistasClientes', 'PistasClientes::index');
 $routes->post('pistasClientes', 'PistasClientes::create');
+$routes->get('pistasClientesFecha', 'PistasClientes::getByFecha');
 $routes->get('pistasClientes/(:segment)', 'PistasClientes::show/$1');
 $routes->put('pistasClientes/(:segment)', 'PistasClientes::update/$1');
 $routes->delete('pistasClientes/(:segment)', 'PistasClientes::delete/$1');
+$routes->get('jugadoresPorPista', 'PistasClientes::getJugadoresPorPista');
+$routes->post('pagarYReservar', 'PistasClientes::pagarYReservar');
+$routes->post('cancelarReserva', 'PistasClientes::cancelarReserva');
 
 //  Galería
 $routes->resource('galeria');
@@ -101,3 +100,6 @@ $routes->get('admin/categorias/eliminar', 'AdminPanelCategorias::eliminarCategor
 
 // ----------------------------------------------------------------------------------------------------------
 $routes->post('api/subirImagenCliente', 'Clientes::subirImagenCliente');
+
+// Stripe Webhook
+$routes->post('stripe/webhook', 'StripeWebhook::index');

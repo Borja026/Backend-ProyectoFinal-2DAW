@@ -31,46 +31,6 @@ class Clientes extends ResourceController
         }
     }
 
-    // public function create()
-    // {
-    //     $model = new ClientesModel();
-    //     $json = $this->request->getJSON(true); // Devuelve array asociativo
-
-    //     if (!$json) {
-    //         return $this->fail('No se recibió JSON válido');
-    //     }
-
-    //     log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
-
-    //     if (!$model->insert($json)) {
-    //         log_message('error', 'Error al registrar cliente: ' . json_encode($model->errors()));
-
-    //         // Esta es la forma correcta de devolver errores en CI4 y que Angular los entienda
-    //         return $this->respond([
-    //             'status' => false,
-    //             'errors' => $model->errors()
-    //         ], 400);
-    //     }
-
-    //     return $this->respond([
-    //         'status' => true,
-    //         'message' => 'Cliente registrado correctamente.'
-    //     ], 201);
-    // }
-    // public function create()
-    // {
-    //     $model = new ClientesModel();
-    //     $json = $this->request->getJSON(true);
-
-    //     if (!$json) {
-    //         return $this->fail('No se recibió JSON válido');
-    //     }
-
-    //     log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
-
-    //     // ✅ Mostrar los datos como respuesta (prueba)
-    //     return $this->respond($json);  // <- AÑADE ESTO TEMPORALMENTE Y COMENTA LO DEMÁS
-    // }
     public function create()
     {
         $model = new ClientesModel();
@@ -96,8 +56,6 @@ class Clientes extends ResourceController
             'message' => 'Cliente registrado correctamente.'
         ], 201);
     }
-
-
 
     public function update($id = null)
     {
@@ -187,7 +145,7 @@ class Clientes extends ResourceController
             }
 
             // Actualizar en la base de datos
-            $model = new \App\Models\ClientesModel();
+            $model = new ClientesModel();
             $model->update($correo, ['foto' => $nuevoNombre]);
 
             return $this->respond(['nuevaImagen' => $nuevoNombre]);
@@ -195,5 +153,18 @@ class Clientes extends ResourceController
 
         return $this->fail('No se pudo subir la imagen.');
     }
+
+    public function getByCorreo($correo)
+    {
+        $model = new ClientesModel();
+        $cliente = $model->where('correo', $correo)->first();
+
+        if (!$cliente) {
+            return $this->failNotFound("Cliente no encontrado.");
+        }
+
+        return $this->respond($cliente);
+    }
+
 
 }
