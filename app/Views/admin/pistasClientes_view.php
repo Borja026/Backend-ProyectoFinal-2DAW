@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Reservas de Pistas</title>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,122 +30,84 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             column-gap: 20px;
             row-gap: 15px;
+        }
 
-            & label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-                color: #495057;
-            }
+        form label {
+            font-weight: bold;
+        }
 
-            & input[type="text"],
-            & input[type="password"],
-            & input[type="number"],
-            & input[type="email"],
-            & input[type="date"],
-            & input[type="datetime-local"],
-            & input[type="file"],
-            & select,
-            & select option {
-                width: 100%;
-                padding: 8px;
-                border: 1px solid #ced4da;
-                border-radius: 4px;
-                box-sizing: border-box;
+        form input,
+        form select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-                text-align: center;
-            }
+        form button {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-            & button {
-                grid-column: 1 / -1;
-                /* ocupa toda la fila */
-                margin-top: 10px;
-                padding: 10px 20px;
-                background-color: #007bff;
-                border: none;
-                color: white;
-                border-radius: 4px;
-                cursor: pointer;
-                justify-self: center;
-                width: 200px;
-
-                &:hover {
-                    background-color: #0056b3;
-                }
-            }
+        form button:hover {
+            background-color: #0056b3;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: #ffffff;
+            background: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             overflow: hidden;
-
-            & th,
-            & td {
-                padding: 12px;
-                text-align: center;
-            }
-
-            & th {
-                background-color: #e9ecef;
-                color: #495057;
-            }
-
-            & tr {
-                border-bottom: 1px solid #dee2e6;
-
-                &:hover {
-                    background-color: #f1f3f5;
-                }
-            }
         }
 
-        .acciones {
-            height: 55px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+        table th,
+        table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
 
-            & a {
-                display: block;
-                padding: 8px;
-                border-radius: 10px;
-                color: white;
-                text-decoration: none;
+        table th {
+            background-color: #f2f2f2;
+        }
 
-                &:nth-child(1) {
-                    background-color: #007bff;
+        .acciones a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
 
-                    &:hover {
-                        background-color: rgb(0, 87, 179);
-                    }
-                }
+        .acciones a:first-child {
+            background-color: #28a745;
+        }
 
-                &:nth-child(2) {
-                    background-color: #ff0000;
+        .acciones a:last-child {
+            background-color: #dc3545;
+        }
 
-                    &:hover {
-                        background-color: rgb(177, 0, 0);
-                    }
-                }
-            }
+        .acciones a:hover {
+            opacity: 0.8;
         }
 
         #filtro {
             width: 300px;
             padding: 8px;
             margin: 20px auto;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
             display: block;
-        }
-
-        p {
-            text-align: center;
-            font-weight: bold;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -158,29 +119,28 @@
 
     <form action="<?= base_url('admin/pistasClientes/guardar') ?>" method="post">
         <input type="hidden" name="modo" value="<?= isset($reservaEditando) ? 'editar' : 'insertar' ?>">
-        <?php if (isset($reservaEditando)) { ?>
-            <input type="hidden" name="idPistasOriginal" value="<?= esc($reservaEditando['idPistas']) ?>">
-            <input type="hidden" name="fechaHoraOriginal" value="<?= esc($reservaEditando['fechaHora']) ?>">
-        <?php } ?>
+        <?php if (isset($reservaEditando)): ?>
+            <input type="hidden" name="idReserva" value="<?= esc($reservaEditando['id']) ?>">
+        <?php endif; ?>
 
         <label>ID Pista:</label>
         <select name="idPistas" required>
             <option value="">-- Selecciona una pista --</option>
-            <?php foreach ($pistas as $pista) { ?>
-                <option value="<?= esc($pista['id']) ?>" <?= (isset($reservaEditando) && $reservaEditando['idPistas'] == $pista['id']) ? 'selected' : '' ?>>
+            <?php foreach ($pistas as $pista): ?>
+                <option value="<?= esc($pista['id']) ?>" <?= isset($reservaEditando) && $reservaEditando['idPistas'] == $pista['id'] ? 'selected' : '' ?>>
                     <?= esc($pista['id']) ?>
                 </option>
-            <?php } ?>
+            <?php endforeach; ?>
         </select>
 
         <label>Correo Cliente:</label>
         <select name="correoClientes" required>
-            <option value="">-- Selecciona un correo de un cliente --</option>
-            <?php foreach ($clientes as $cliente) { ?>
-                <option value="<?= esc($cliente['correo']) ?>" <?= (isset($reservaEditando) && $reservaEditando['correoClientes'] == $cliente['correo']) ? 'selected' : '' ?>>
+            <option value="">-- Selecciona un cliente --</option>
+            <?php foreach ($clientes as $cliente): ?>
+                <option value="<?= esc($cliente['correo']) ?>" <?= isset($reservaEditando) && $reservaEditando['correoClientes'] == $cliente['correo'] ? 'selected' : '' ?>>
                     <?= esc($cliente['correo']) ?>
                 </option>
-            <?php } ?>
+            <?php endforeach; ?>
         </select>
 
         <label>Fecha y Hora:</label>
@@ -189,72 +149,85 @@
             required>
 
         <label>Número de Personas:</label>
-        <input type="number" name="numPersonas" value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>" min="1"
-            max="5" required>
+        <input type="number" name="numPersonas" min="1" max="4" required
+            value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>">
 
         <label>Nivel Personas:</label>
         <input type="text" name="nivelPersonas" value="<?= esc($reservaEditando['nivelPersonas'] ?? '') ?>"
-            placeholder="Ej. [1.50, 2.00]" maxlength="255">
+            placeholder="[2.5, 3]">
 
         <label>Media Nivel:</label>
-        <input type="number" name="mediaNivel" value="<?= esc($reservaEditando['mediaNivel'] ?? '') ?>"
-            placeholder="Media nivel (0-10)" min="0" max="10" step="0.1">
+        <input type="number" step="0.01" name="mediaNivel" min="0" max="5"
+            value="<?= esc($reservaEditando['mediaNivel'] ?? '') ?>">
+
+        <label>Estado Pago:</label>
+        <select name="estadoPago">
+            <option value="pendiente" <?= (isset($reservaEditando) && $reservaEditando['estadoPago'] === 'pendiente') ? 'selected' : '' ?>>Pendiente</option>
+            <option value="pagado" <?= (isset($reservaEditando) && $reservaEditando['estadoPago'] === 'pagado') ? 'selected' : '' ?>>Pagado</option>
+        </select>
+
+        <label>Cancelada:</label>
+        <select name="cancelada">
+            <option value="0" <?= (isset($reservaEditando) && $reservaEditando['cancelada'] === '0') ? 'selected' : '' ?>>
+                No</option>
+            <option value="1" <?= (isset($reservaEditando) && $reservaEditando['cancelada'] === '1') ? 'selected' : '' ?>>
+                Sí</option>
+        </select>
 
         <button type="submit"><?= isset($reservaEditando) ? 'Actualizar' : 'Insertar' ?></button>
     </form>
 
-    <p>Buscar pista: <input type="text" id="filtro" placeholder="Buscar pista..."></p>
+    <input type="text" id="filtro" placeholder="Buscar por cualquier campo...">
 
-    <table id="tablaPistasClientes">
+    <table id="tablaReservas">
         <thead>
             <tr>
-                <th>ID Pista</th>
-                <th>Correo Cliente</th>
+                <th>ID</th>
+                <th>Pista</th>
+                <th>Cliente</th>
                 <th>Fecha y Hora</th>
                 <th>Nº Personas</th>
                 <th>Nivel Personas</th>
                 <th>Media Nivel</th>
+                <th>Pago</th>
+                <th>Cancelada</th>
                 <th>Acciones</th>
             </tr>
         </thead>
-
         <tbody>
-            <?php foreach ($reservas as $reserva) { ?>
+            <?php foreach ($reservas as $reserva): ?>
                 <tr>
+                    <td><?= esc($reserva['id']) ?></td>
                     <td><?= esc($reserva['idPistas']) ?></td>
                     <td><?= esc($reserva['correoClientes']) ?></td>
                     <td><?= date('d/m/Y H:i', strtotime($reserva['fechaHora'])) ?></td>
                     <td><?= esc($reserva['numPersonas']) ?></td>
                     <td><?= esc($reserva['nivelPersonas']) ?></td>
                     <td><?= esc($reserva['mediaNivel']) ?></td>
-
+                    <td><?= esc($reserva['estadoPago']) ?></td>
+                    <td><?= esc($reserva['cancelada']) == '1' ? 'Sí' : 'No' ?></td>
                     <td class="acciones">
-                        <a
-                            href="<?= base_url('admin/pistasClientes?editar=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>">
-                            Editar</a>
-                        <a href="<?= base_url('admin/pistasClientes/eliminar?fechaHora=' . urlencode($reserva['fechaHora']) . '&id=' . $reserva['idPistas']) ?>"
-                            onclick="return confirm('¿Seguro que deseas eliminar esta reserva?')">Eliminar</a>
+                        <a href="<?= base_url('admin/pistasClientes?editar=' . $reserva['id']) ?>">Editar</a>
+                        <a href="<?= base_url('admin/pistasClientes/eliminar?id=' . $reserva['id']) ?>"
+                            onclick="return confirm('¿Deseas eliminar esta reserva?')">Eliminar</a>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
-</body>
 
-<!-- Funcionalidad del Filtro -->
-<script>
-    const filtroInput = document.getElementById('filtro');
-    const tabla = document.getElementById('tablaPistasClientes').getElementsByTagName('tbody')[0];
+    <script>
+        const filtro = document.getElementById('filtro');
+        const filas = document.querySelectorAll('#tablaReservas tbody tr');
 
-    filtroInput.addEventListener('keyup', function () {
-        const filtro = this.value.toLowerCase();
-        const filas = tabla.getElementsByTagName('tr');
-
-        Array.from(filas).forEach(fila => {
-            const textoFila = fila.textContent.toLowerCase();
-            fila.style.display = textoFila.includes(filtro) ? '' : 'none';
+        filtro.addEventListener('keyup', () => {
+            const texto = filtro.value.toLowerCase();
+            filas.forEach(fila => {
+                fila.style.display = fila.textContent.toLowerCase().includes(texto) ? '' : 'none';
+            });
         });
-    });
-</script>
+    </script>
+
+</body>
 
 </html>

@@ -16,18 +16,36 @@ class PistasClientes extends ResourceController
     public function index()
     {
         $model = new PistasClientesModel();
+        // $data = $model->findAll();
         $data = $model->findAll();
+        $data = array_map(function ($item) {
+            $item['numPersonas'] = (int) $item['numPersonas'];
+            $item['idPistas'] = (int) $item['idPistas'];
+            $item['mediaNivel'] = (float) $item['mediaNivel'];
+            return $item;
+        }, $data);
+
         return $this->respond($data, 200);
     }
 
-    public function show($fechaHora = null)
+    // public function show($fechaHora = null)
+    // {
+    //     $model = new PistasClientesModel();
+    //     $data = $model->where('fechaHora', $fechaHora)->first();
+
+    //     return ($data)
+    //         ? $this->respond($data)
+    //         : $this->failNotFound('No se encontró la reserva con esa fecha y hora.');
+    // }
+
+    public function show($id = null)
     {
         $model = new PistasClientesModel();
-        $data = $model->where('fechaHora', $fechaHora)->first();
+        $data = $model->find($id);
 
         return ($data)
             ? $this->respond($data)
-            : $this->failNotFound('No se encontró la reserva con esa fecha y hora.');
+            : $this->failNotFound('No se encontró la reserva.');
     }
 
     public function create()
@@ -46,6 +64,7 @@ class PistasClientes extends ResourceController
 
         $personasExistentes = $model->where('idPistas', $data['idPistas'])
             ->where('fechaHora', $data['fechaHora'])
+            ->where('cancelada', '0')
             ->selectSum('numPersonas')
             ->first()['numPersonas'] ?? 0;
 
@@ -54,13 +73,55 @@ class PistasClientes extends ResourceController
             return $this->fail('No se puede apuntar. La pista ya está completa o sobrepasaría el límite de 4 personas.');
         }
 
+
         $model->insert($data);
         return $this->respondCreated(['message' => 'Reserva realizada con éxito']);
     }
 
-    public function update($fechaHora = null)
+    // public function update($fechaHora = null)
+    // {
+    //     $model = new PistasClientesModel();
+    //     $json = $this->request->getJSON();
+
+    //     if ($json) {
+    //         $data = [
+    //             'fechaHora' => $json->fechaHora,
+    //             'correoClientes' => $json->correoClientes,
+    //             'idPistas' => $json->idPistas,
+    //             'numPersonas' => $json->numPersonas,
+    //             'nivelPersonas' => $json->nivelPersonas ?? null,
+    //             'mediaNivel' => $json->mediaNivel ?? null
+    //         ];
+    //     } else {
+    //         $input = $this->request->getRawInput();
+    //         $data = [
+    //             'fechaHora' => $input['fechaHora'],
+    //             'correoClientes' => $input['correoClientes'],
+    //             'idPistas' => $input['idPistas'],
+    //             'numPersonas' => $input['numPersonas'],
+    //             'nivelPersonas' => $input['nivelPersonas'] ?? null,
+    //             'mediaNivel' => $input['mediaNivel'] ?? null
+    //         ];
+    //     }
+
+    //     if (!$model->update($fechaHora, $data)) {
+    //         return $this->failValidationErrors($model->errors());
+    //     }
+
+    //     return $this->respond([
+    //         'status' => 200,
+    //         'error' => null,
+    //         'messages' => [
+    //             'success' => 'Reserva actualizada correctamente'
+    //         ]
+    //     ]);
+    // }
+
+    public function update($id = null)
     {
         $model = new PistasClientesModel();
+
+        // Obtener datos en formato JSON o como entrada bruta
         $json = $this->request->getJSON();
 
         if ($json) {
@@ -70,7 +131,11 @@ class PistasClientes extends ResourceController
                 'idPistas' => $json->idPistas,
                 'numPersonas' => $json->numPersonas,
                 'nivelPersonas' => $json->nivelPersonas ?? null,
-                'mediaNivel' => $json->mediaNivel ?? null
+                'mediaNivel' => $json->mediaNivel ?? null,
+                'estadoPago' => $json->estadoPago ?? 'pendiente',
+                'cancelada' => $json->cancelada ?? '0',
+                'pago_id' => $json->pago_id ?? null,
+                'fechaCancelacion' => $json->fechaCancelacion ?? null
             ];
         } else {
             $input = $this->request->getRawInput();
@@ -80,11 +145,20 @@ class PistasClientes extends ResourceController
                 'idPistas' => $input['idPistas'],
                 'numPersonas' => $input['numPersonas'],
                 'nivelPersonas' => $input['nivelPersonas'] ?? null,
-                'mediaNivel' => $input['mediaNivel'] ?? null
+                'mediaNivel' => $input['mediaNivel'] ?? null,
+                'estadoPago' => $input['estadoPago'] ?? 'pendiente',
+                'cancelada' => $input['cancelada'] ?? '0',
+                'pago_id' => $input['pago_id'] ?? null,
+                'fechaCancelacion' => $input['fechaCancelacion'] ?? null
             ];
         }
 
-        if (!$model->update($fechaHora, $data)) {
+        // Validación opcional
+        if (!$model->find($id)) {
+            return $this->failNotFound("Reserva con ID $id no encontrada.");
+        }
+
+        if (!$model->update($id, $data)) {
             return $this->failValidationErrors($model->errors());
         }
 
@@ -96,6 +170,7 @@ class PistasClientes extends ResourceController
             ]
         ]);
     }
+
 
     public function delete($fechaHora = null)
     {
@@ -116,7 +191,14 @@ class PistasClientes extends ResourceController
         }
 
         $model = new PistasClientesModel();
+        // $data = $model->where('DATE(fechaHora)', $fecha)->findAll();
         $data = $model->where('DATE(fechaHora)', $fecha)->findAll();
+        $data = array_map(function ($item) {
+            $item['numPersonas'] = (int) $item['numPersonas'];
+            $item['idPistas'] = (int) $item['idPistas'];
+            $item['mediaNivel'] = (float) $item['mediaNivel'];
+            return $item;
+        }, $data);
 
         return $this->respond($data);
     }
@@ -142,7 +224,8 @@ class PistasClientes extends ResourceController
     {
         $data = $this->request->getJSON(true);
 
-        \Stripe\Stripe::setApiKey('xxxx'); // tu clave secreta
+        // \Stripe\Stripe::setApiKey('xxxx'); // tu clave secreta
+        \Stripe\Stripe::setApiKey($_ENV['STRIPE_TEST_SECRET_KEY']);
 
         try {
             $session = \Stripe\Checkout\Session::create([
@@ -181,19 +264,46 @@ class PistasClientes extends ResourceController
         $ahora = new \DateTime();
         $diffHoras = ($fechaHora->getTimestamp() - $ahora->getTimestamp()) / 3600;
 
+        log_message('debug', 'Datos recibidos en cancelarReserva: ' . json_encode($data));
+
         if ($diffHoras < 10) {
             return $this->fail('Solo puedes cancelar la reserva con 10 horas de antelación.');
         }
 
         $model = new PistasClientesModel();
+        // $reserva = $model->where('fechaHora', $data['fechaHora'])
+        //     ->where('idPistas', $data['idPistas'])
+        //     ->first();
+        $reserva = $model->where('fechaHora', $data['fechaHora'])
+            ->where('idPistas', $data['idPistas'])
+            ->where('correoClientes', $data['correoClientes'])
+            ->first();
+
+        if (!$reserva) {
+            return $this->failNotFound('Reserva no encontrada.');
+        }
+
         $model->where('fechaHora', $data['fechaHora'])
             ->where('idPistas', $data['idPistas'])
             ->update(null, [
                 'cancelada' => 1,
-                'fechaCancelacion' => date('Y-m-d H:i:s')
+                'fechaCancelacion' => date('Y-m-d H:i:s'),
+                'estadoPago' => 'reembolsado'
             ]);
 
-        return $this->respond(['message' => 'Reserva cancelada correctamente']);
+        // ENVÍO DE EMAIL
+        $email = \Config\Services::email();
+        $email->setTo($reserva['correoClientes']);
+        $email->setSubject('Cancelación de Reserva - Dream Pádel Quart');
+        $email->setMessage("Tu reserva para la pista {$reserva['idPistas']} el {$reserva['fechaHora']} ha sido cancelada correctamente. 
+    El reembolso se tramitará en un plazo de 3 a 7 días hábiles.\n\nGracias por confiar en Dream Pádel Quart.");
+
+        if (!$email->send()) {
+            return $this->fail('Error al enviar el correo de confirmación.');
+        }
+
+        return $this->respond(['message' => 'Reserva cancelada correctamente y correo enviado.']);
     }
+
 
 }
