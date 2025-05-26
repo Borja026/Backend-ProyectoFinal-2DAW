@@ -100,6 +100,15 @@
             'reference' => '399a128ff2fdaf4281e4e79b755693286cdf325c',
             'dev_requirement' => true,
         ),
+        'graham-campbell/result-type' => array(
+            'pretty_version' => 'v1.1.3',
+            'version' => '1.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../graham-campbell/result-type',
+            'aliases' => array(),
+            'reference' => '3ba905c11371512af9d9bdd27d99b782216b6945',
+            'dev_requirement' => false,
+        ),
         'kint-php/kint' => array(
             'pretty_version' => '6.0.1',
             'version' => '6.0.1.0',
@@ -171,6 +180,15 @@
             'aliases' => array(),
             'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
             'dev_requirement' => true,
+        ),
+        'phpoption/phpoption' => array(
+            'pretty_version' => '1.9.3',
+            'version' => '1.9.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoption/phpoption',
+            'aliases' => array(),
+            'reference' => 'e3fac8b24f56113f7cb96af14958c0dd16330f54',
+            'dev_requirement' => false,
         ),
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '11.0.9',
@@ -566,7 +584,7 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
             'aliases' => array(),
             'reference' => 'a3cc8b044a6ea513310cbd48ef7333b384945638',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-intl-grapheme' => array(
             'pretty_version' => 'v1.32.0',
@@ -593,7 +611,7 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
             'reference' => '6d857f4d76bd4b343eac26d6b539585d2bc56493',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-php80' => array(
             'pretty_version' => 'v1.32.0',
@@ -602,7 +620,7 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
             'aliases' => array(),
             'reference' => '0cc9dd0f17f61d8131e7df6b84bd344899fe2608',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/polyfill-php81' => array(
             'pretty_version' => 'v1.32.0',
@@ -657,6 +675,15 @@
             'aliases' => array(),
             'reference' => '737eda637ed5e28c3413cb1ebe8bb52cbf1ca7a2',
             'dev_requirement' => true,
+        ),
+        'vlucas/phpdotenv' => array(
+            'pretty_version' => 'v5.6.2',
+            'version' => '5.6.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../vlucas/phpdotenv',
+            'aliases' => array(),
+            'reference' => '24ac4c74f91ee2c193fa1aaa5c249cb0822809af',
+            'dev_requirement' => false,
         ),
     ),
 );
