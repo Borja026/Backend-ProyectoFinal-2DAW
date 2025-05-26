@@ -149,7 +149,7 @@
             required>
 
         <label>Número de Personas:</label>
-        <input type="number" name="numPersonas" min="1" max="4" required
+        <input type="number" name="numPersonas" min="1" max="5" required
             value="<?= esc($reservaEditando['numPersonas'] ?? '') ?>">
 
         <label>Nivel Personas:</label>
