@@ -154,10 +154,10 @@
 
         <label>Nivel Personas:</label>
         <input type="text" name="nivelPersonas" value="<?= esc($reservaEditando['nivelPersonas'] ?? '') ?>"
-            placeholder="[2.5, 3]">
+            placeholder="[2.5, 3]" required>
 
         <label>Media Nivel:</label>
-        <input type="number" step="0.01" name="mediaNivel" min="0" max="5"
+        <input type="number" step="0.01" name="mediaNivel" min="0" max="9" required
             value="<?= esc($reservaEditando['mediaNivel'] ?? '') ?>">
 
         <label>Estado Pago:</label>

@@ -148,7 +148,7 @@ class AdminPanelPistasClientes extends BaseController
                 ->first()['numPersonas'] ?? 0;
 
             $total = intval($personasExistentes) + intval($data['numPersonas']);
-            if ($total > 4) {
+            if ($total > 5) {
                 return redirect()->back()->with('error', 'La pista ya está completa o sobrepasaría el límite de 4 personas.');
             }
 

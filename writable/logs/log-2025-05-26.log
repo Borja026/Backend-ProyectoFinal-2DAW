@@ -16,3 +16,8 @@ in APPPATH/Controllers/PistasClientes.php on line 179.
  4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
  5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ERROR - 2025-05-26 20:31:27 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-26 20:31:32 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-26 20:31:34 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-26 20:31:35 --> Error al registrar cliente: {"correo":"The correo field must contain a unique value.","username":"The username field must contain a unique value."}
+ERROR - 2025-05-26 20:33:45 --> Error al registrar cliente: []
