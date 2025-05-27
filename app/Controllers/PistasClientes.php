@@ -195,10 +195,10 @@ class PistasClientes extends ResourceController
                 'metadata' => [
                     'reserva' => json_encode($data) // 👈 ESTA LÍNEA ENVÍA LA RESERVA AL WEBHOOK
                 ],
-                // 'success_url' => 'https://borja.com.es/ProyectoDosDAW/partidas',
-                // 'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/partidas',
-                'success_url' => 'https://borja.com.es/ProyectoDosDAW/',
-                'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/',
+                'success_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+                'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+                // 'success_url' => 'https://borja.com.es/ProyectoDosDAW/',
+                // 'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/',
             ]);
 
             return $this->respond([

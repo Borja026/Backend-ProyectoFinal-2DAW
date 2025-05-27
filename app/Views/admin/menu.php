@@ -43,6 +43,24 @@
 </head>
 
 <body>
+    <script>
+        // Verificación de sesión
+        const correo = localStorage.getItem('usuarioCorreo');
+        const tipo = localStorage.getItem('usuarioTipo');
+
+        if (!correo || tipo !== 'empleado') {
+            // Redirige automáticamente si no hay sesión
+            window.location.href = "https://borja.com.es/ProyectoDosDAW/#/login";
+        }
+
+        function cerrarSesion() {
+            localStorage.removeItem('usuarioCorreo');
+            localStorage.removeItem('usuarioTipo');
+            window.location.href = "https://borja.com.es/ProyectoDosDAW/#/login";
+        }
+    </script>
+
+
     <nav>
         <ul>
             <li><a href="<?= base_url('admin/clientes') ?>">Clientes</a></li>
@@ -51,6 +69,7 @@
             <li><a href="<?= base_url('admin/pistas') ?>">Pistas</a></li>
             <li><a href="<?= base_url('admin/galeria') ?>">Galeria</a></li>
             <li><a href="<?= base_url('admin/categorias') ?>">Categorias</a></li>
+            <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
         </ul>
     </nav>
 </body>
