@@ -40,8 +40,6 @@ class Clientes extends ResourceController
             return $this->fail('No se recibió JSON válido');
         }
 
-        log_message('debug', 'Datos recibidos para insertar: ' . json_encode($json)); // DEBUG
-
         if (!$model->insert($json)) {
             log_message('error', 'Error al registrar cliente: ' . json_encode($model->errors()));
 
@@ -64,7 +62,6 @@ class Clientes extends ResourceController
         $json = $this->request->getJSON();
 
         if ($json) {
-            // OJO: NO incluyas el campo 'correo' aquí
             $data = [
                 'nombre' => $json->nombre,
                 'apellidos' => $json->apellidos,
@@ -144,7 +141,6 @@ class Clientes extends ResourceController
                 unlink('imgs/clientes/' . $anterior);
             }
 
-            // Actualizar en la base de datos
             $model = new ClientesModel();
             $model->update($correo, ['foto' => $nuevoNombre]);
 

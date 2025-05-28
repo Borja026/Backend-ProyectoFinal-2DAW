@@ -86,7 +86,6 @@ class Empleados extends ResourceController
             ];
         }
 
-        // Insertar
         $model->update($dni, $data);
         $response = [
             'status' => 200,

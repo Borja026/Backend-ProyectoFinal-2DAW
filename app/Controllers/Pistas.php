@@ -68,7 +68,6 @@ class Pistas extends ResourceController
             ];
         }
 
-        // Insertar
         $model->update($id, $data);
         $response = [
             'status' => 200,

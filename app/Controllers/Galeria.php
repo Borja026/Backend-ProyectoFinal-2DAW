@@ -68,7 +68,6 @@ class Galeria extends ResourceController
             ];
         }
 
-        // Insertar
         $model->update($nombre, $data);
         $response = [
             'status' => 200,

@@ -16,7 +16,6 @@ class PistasClientes extends ResourceController
     public function index()
     {
         $model = new PistasClientesModel();
-        // $data = $model->findAll();
         $data = $model->findAll();
         $data = array_map(function ($item) {
             $item['numPersonas'] = (int) $item['numPersonas'];
@@ -72,7 +71,7 @@ class PistasClientes extends ResourceController
     {
         $model = new PistasClientesModel();
 
-        // Obtener datos en formato JSON o como entrada bruta
+        // Obtener datos en formato JSON
         $json = $this->request->getJSON();
 
         if ($json) {
@@ -104,7 +103,6 @@ class PistasClientes extends ResourceController
             ];
         }
 
-        // Validación opcional
         if (!$model->find($id)) {
             return $this->failNotFound("Reserva con ID $id no encontrada.");
         }
@@ -142,7 +140,6 @@ class PistasClientes extends ResourceController
         }
 
         $model = new PistasClientesModel();
-        // $data = $model->where('DATE(fechaHora)', $fecha)->findAll();
         $data = $model->where('DATE(fechaHora)', $fecha)->findAll();
         $data = array_map(function ($item) {
             $item['numPersonas'] = (int) $item['numPersonas'];
@@ -225,7 +222,6 @@ class PistasClientes extends ResourceController
             return $this->failNotFound('Reserva no encontrada.');
         }
 
-        // Eliminar directamente la reserva
         $deleted = $model->delete($reserva['id']);
 
         if (!$deleted) {
