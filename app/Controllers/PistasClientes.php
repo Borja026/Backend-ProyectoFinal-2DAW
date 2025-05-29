@@ -168,9 +168,96 @@ class PistasClientes extends ResourceController
         return $this->respond($jugadores);
     }
 
+    // public function pagarYReservar()
+    // {
+    //     $data = $this->request->getJSON(true);
+
+    //     // \Stripe\Stripe::setApiKey('xxxx'); // tu clave secreta
+    //     \Stripe\Stripe::setApiKey($_ENV['STRIPE_TEST_SECRET_KEY']);
+
+    //     try {
+    //         $session = \Stripe\Checkout\Session::create([
+    //             'payment_method_types' => ['card'],
+    //             'line_items' => [
+    //                 [
+    //                     'price_data' => [
+    //                         'currency' => 'eur',
+    //                         'product_data' => ['name' => 'Reserva de pista'],
+    //                         'unit_amount' => 750,
+    //                     ],
+    //                     'quantity' => 1,
+    //                 ]
+    //             ],
+    //             'mode' => 'payment',
+    //             'metadata' => [
+    //                 'reserva' => json_encode($data) // 👈 ESTA LÍNEA ENVÍA LA RESERVA AL WEBHOOK
+    //             ],
+    //             'success_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+    //             'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+    //             // 'success_url' => 'https://borja.com.es/ProyectoDosDAW/',
+    //             // 'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/',
+    //         ]);
+
+    //         return $this->respond([
+    //             'sessionId' => $session->id,
+    //             'url' => $session->url
+    //         ]);
+    //     } catch (\Exception $e) {
+    //         return $this->failServerError($e->getMessage());
+    //     }
+    // }
+
+    //     $data = $this->request->getJSON(true);
+
+    //     // Validar que haya un número de personas válido
+    //     $numPersonas = isset($data['numPersonas']) ? (int) $data['numPersonas'] : 1;
+    //     if ($numPersonas < 1 || $numPersonas > 4) {
+    //         return $this->failValidationErrors('El número de personas debe estar entre 1 y 4.');
+    //     }
+
+    //     $precioPorPersona = 750; // en céntimos (7.50€)
+    //     $precioTotal = $precioPorPersona * $numPersonas;
+
+    //     \Stripe\Stripe::setApiKey($_ENV['STRIPE_TEST_SECRET_KEY']);
+
+    //     try {
+    //         $session = \Stripe\Checkout\Session::create([
+    //             'payment_method_types' => ['card'],
+    //             'line_items' => [
+    //                 [
+    //                     'price_data' => [
+    //                         'currency' => 'eur',
+    //                         'product_data' => ['name' => 'Reserva de pista (' . $numPersonas . ' persona' . ($numPersonas > 1 ? 's' : '') . ')'],
+    //                         'unit_amount' => $precioTotal,
+    //                     ],
+    //                     'quantity' => 1,
+    //                 ]
+    //             ],
+    //             'mode' => 'payment',
+    //             'metadata' => [
+    //                 'reserva' => json_encode($data)
+    //             ],
+    //             'success_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+    //             'cancel_url' => 'https://borja.com.es/ProyectoDosDAW/#/partidas',
+    //         ]);
+
+    //         return $this->respond([
+    //             'sessionId' => $session->id,
+    //             'url' => $session->url
+    //         ]);
+    //     } catch (\Exception $e) {
+    //         return $this->failServerError($e->getMessage());
+    //     }
+    // }
+
     public function pagarYReservar()
     {
         $data = $this->request->getJSON(true);
+
+        $precioPorPersona = 650;
+        $numPersonas = isset($data['numPersonas']) ? (int) $data['numPersonas'] : 1;
+        $precioTotal = $precioPorPersona * $numPersonas;
+
 
         // \Stripe\Stripe::setApiKey('xxxx'); // tu clave secreta
         \Stripe\Stripe::setApiKey($_ENV['STRIPE_TEST_SECRET_KEY']);
@@ -183,7 +270,7 @@ class PistasClientes extends ResourceController
                         'price_data' => [
                             'currency' => 'eur',
                             'product_data' => ['name' => 'Reserva de pista'],
-                            'unit_amount' => 750,
+                            'unit_amount' => $precioTotal,
                         ],
                         'quantity' => 1,
                     ]
