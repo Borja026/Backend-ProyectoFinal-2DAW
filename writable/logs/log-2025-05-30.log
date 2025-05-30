@@ -1,0 +1,30 @@
+CRITICAL - 2025-05-30 07:22:57 --> ErrorException: Attempt to read property "nombre" on array
+[Method: PUT, Route: clientes/patata@gmail.com]
+in APPPATH/Controllers/Clientes.php on line 66.
+ 1 APPPATH/Controllers/Clientes.php(66): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Clientes->update()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-30 08:14:30 --> ErrorException: Undefined array key "STRIPE_WEBHOOK_SECRET"
+[Method: POST, Route: stripe/webhook]
+in APPPATH/Controllers/StripeWebhook.php on line 88.
+ 1 APPPATH/Controllers/StripeWebhook.php(88): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\StripeWebhook->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-05-30 08:14:46 --> ErrorException: Undefined array key "STRIPE_WEBHOOK_SECRET"
+[Method: POST, Route: stripe/webhook]
+in APPPATH/Controllers/StripeWebhook.php on line 88.
+ 1 APPPATH/Controllers/StripeWebhook.php(88): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\StripeWebhook->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
